@@ -53,17 +53,17 @@ int main(){
             movimentoRainha(8);
         break;
 
-        // Cavalo (duas casas p/ baixo e uma p/ esquerda) (for e while)
+        // Cavalo (duas casas p/ cima e uma p/ direita) (for e while)
         case 4:
             printf("Movimentação - Cavalo\n");
             mov_peca = 1;
             while (mov_peca--) {
                 
                 for (int mov_peca_2 = 0; mov_peca_2 < 2; mov_peca_2++) {
-                    printf("Baixo\n");
+                    printf("Cima\n");
                 }
                 
-            printf("Esquerda\n");
+            printf("Direita\n");
             }
         break;
         
