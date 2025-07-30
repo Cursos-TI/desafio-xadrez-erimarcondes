@@ -9,7 +9,8 @@ int main(){
             "1. Torre\n"
             "2. Bispo\n"
             "3. Rainha\n"
-            "4. Sair do programa\n");
+            "4. Cavalo\n"
+            "5. Sair do programa\n");
     scanf("%d", &escolha);
 
     switch (escolha) {
@@ -30,7 +31,7 @@ int main(){
             }
         break;
 
-        //  Rainha (oito casas para a esquerda) (do while)
+        //  Rainha (oito casas p/ esquerda) (do while)
         case 3:
             printf("Movimentação - Rainha\n");
             do {
@@ -39,8 +40,22 @@ int main(){
             }while (mov_peca < 8);
         break;
 
-        //  Sair do programa
+        // Cavalo (duas casas p/ baixo e uma p/ esquerda) (for e while)
         case 4:
+            printf("Movimentação - Cavalo\n");
+            mov_peca = 1;
+            while (mov_peca--) {
+                
+                for (int mov_peca_2 = 0; mov_peca_2 < 2; mov_peca_2++) {
+                    printf("Baixo\n");
+                }
+                
+            printf("Esquerda\n");
+            }
+        break;
+        
+        //  Sair do programa
+        case 5:
             printf("Saindo do programa...\n");
             return 0;
         break;
