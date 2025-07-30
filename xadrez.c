@@ -1,5 +1,26 @@
 #include <stdio.h>
 
+void movimentoTorre(int casas){ // movimentação p/ direita
+    if (casas > 0) {
+        printf("Direita\n");
+        movimentoTorre(casas - 1);
+    }
+}
+
+void movimentoBispo(int casas){ // movimentação na diagonal p/ cima e direita
+    if (casas > 0) {
+        printf("Cima, Direita\n");
+        movimentoBispo(casas - 1);
+    }
+}
+
+void movimentoRainha(int casas){ // movimentação p/ esquerda
+    if (casas > 0){
+        printf("Esquerda\n");
+        movimentoRainha(casas - 1);
+    }
+}
+
 int main(){
     int escolha, mov_peca = 0;
 
@@ -14,30 +35,22 @@ int main(){
     scanf("%d", &escolha);
 
     switch (escolha) {
-        //  Torre (cinco casas p/ direita) (for)
+        //  Torre (função recursiva)
         case 1:
             printf("Movimentação - Torre\n");
-            for (mov_peca = 0; mov_peca < 5; mov_peca++) {
-            printf("Direita\n");
-            }
+            movimentoTorre(5);
         break;
 
-        //  Bispo (cinco casas na diagonal p/ cima e direita) (while)
+        //  Bispo (função recursiva)
         case 2:
             printf("Movimentação - Bispo\n");
-            while (mov_peca < 5) {
-            printf("Cima, Direita\n");
-            mov_peca++;
-            }
+            movimentoBispo(5);
         break;
 
-        //  Rainha (oito casas p/ esquerda) (do while)
+        //  Rainha (função recursiva)
         case 3:
             printf("Movimentação - Rainha\n");
-            do {
-            printf("Esquerda\n");
-            mov_peca++;
-            }while (mov_peca < 8);
+            movimentoRainha(8);
         break;
 
         // Cavalo (duas casas p/ baixo e uma p/ esquerda) (for e while)
